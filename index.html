@@ -3,35 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kova | Construye tu disciplina</title>
+    <title>Kova | Cognitive Edge Discipline</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neuralIndigo: '#4F46E5',
+                        neonMint: '#00D4B6',
+                        electricPurple: '#8B5CF6',
+                        obsidian: '#111827',
+                        slateGrey: '#6B7280',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'kova-gradient': "linear-gradient(135deg, #4F46E5 0%, #8B5CF6 100%)",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
+        body { font-family: 'Inter', sans-serif; color: #111827; }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans">
-    <section class="max-w-4xl mx-auto px-6 py-20 text-center">
-        <h1 class="text-5xl font-extrabold tracking-tight mb-6">Deja de intentar tener fuerza de voluntad. <span class="text-blue-600">Empieza a construirla.</span></h1>
-        <p class="text-xl text-slate-600 mb-10">Kova es la primera app que no asume que ya eres disciplinado. Te enseñamos a serlo con micro-acciones y protección contra el autosabotaje.</p>
+<body class="bg-white">
+
+    <header class="relative bg-kova-gradient py-24 px-6 text-white overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
+                La disciplina se construye, <br>
+                <span class="text-neonMint">no se tiene.</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 text-blue-100 max-w-2xl mx-auto font-medium">
+                Kova es la ventaja cognitiva que necesitas. No rastreamos hábitos, entrenamos tu identidad con IA.
+            </p>
+            
+            <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 inline-block w-full max-w-md shadow-2xl">
+                <h2 class="text-white text-lg font-semibold mb-4">Únete a la lista de espera VIP</h2>
+                <form action="AQUÍ_TU_URL_DE_FORMSPREE" method="POST" class="flex flex-col gap-4">
+                    <input type="email" name="email" placeholder="Tu email principal" 
+                        class="bg-white text-obsidian p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-neonMint" required>
+                    <button type="submit" 
+                        class="bg-neonMint text-obsidian font-bold py-4 rounded-xl text-lg hover:scale-105 transition-transform shadow-lg">
+                        OBTENER MI COGNITIVE EDGE
+                    </button>
+                </form>
+                <p class="text-xs text-blue-200 mt-4 uppercase tracking-widest font-bold">Acceso anticipado gratuito • Enero 2026</p>
+            </div>
+        </div>
         
-        <div class="bg-white p-8 rounded-2xl shadow-xl border border-slate-200 inline-block w-full max-w-md">
-            <h2 class="text-lg font-bold mb-4">Únete al acceso anticipado</h2>
-            <form action="AQUÍ_TU_URL_DE_FORMULARIO" method="POST" class="flex flex-col gap-4">
-                <input type="email" name="email" placeholder="Tu mejor email..." class="border p-3 rounded-lg focus:outline-blue-600" required>
-                <button type="submit" class="bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition">Quiero mi acceso gratis</button>
-            </form>
-            <p class="text-xs text-slate-400 mt-4">Prometemos no enviarte spam, solo disciplina.</p>
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+            <svg width="100%" height="100%"><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/></pattern><rect width="100%" height="100%" fill="url(#grid)" /></svg>
+        </div>
+    </header>
+
+    <section class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-12">
+            <div class="border-l-4 border-neuralIndigo pl-6">
+                <h3 class="text-neuralIndigo text-xl font-bold mb-2">The Mirror 🪞</h3>
+                <p class="text-slateGrey">Visualiza tu evolución en tiempo real. No sumas días, acumulas <strong>Identity Points</strong> que validan quién eres.</p>
+            </div>
+            <div class="border-l-4 border-electricPurple pl-6">
+                <h3 class="text-neuralIndigo text-xl font-bold mb-2">Fast Mode ⚡</h3>
+                <p class="text-slateGrey">¿Día caótico? Activa la micro-acción de 30 segundos. La cadena de tu disciplina nunca se rompe.</p>
+            </div>
+            <div class="border-l-4 border-neonMint pl-6">
+                <h3 class="text-neuralIndigo text-xl font-bold mb-2">Pattern Radar 🧠</h3>
+                <p class="text-slateGrey">Nuestra IA detecta tus patrones de autosabotaje antes de que ocurran. Intervención proactiva, no reactiva.</p>
+            </div>
         </div>
     </section>
 
-    <section class="bg-white py-20 px-6">
-        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
-            <div>
-                <h3 class="text-2xl font-bold mb-4">The Mirror 🪞</h3>
-                <p class="text-slate-600 font-medium">No sumes días, suma identidad. Cada acción es un voto por la persona en la que te quieres convertir.</p>
-            </div>
-            <div>
-                <h3 class="text-2xl font-bold mb-4">Fast Mode ⚡</h3>
-                <p class="text-slate-600 font-medium">¿Día difícil? No rompas la racha. Activa el modo de 30 segundos y mantén tu disciplina intacta.</p>
+    <section class="bg-obsidian py-20 px-6 text-white">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">Tres hermanos, una misión.</h2>
+            <p class="text-lg text-slate-300 leading-relaxed font-light mb-8">
+                "Vimos a las personas que más queremos atrapadas en el 'no puedo' durante años. Las apps tradicionales asumen que ya eres disciplinado. Nosotros usamos la tecnología para construir ese músculo desde cero."
+            </p>
+            <div class="flex justify-center gap-4 text-neonMint font-bold tracking-widest text-sm uppercase">
+                <span>Agus</span> • <span>Teo</span> • <span>Daniel</span>
             </div>
         </div>
     </section>
+
+    <footer class="py-12 text-center text-slateGrey text-sm">
+        <p>&copy; 2026 Kova App. Todos los derechos reservados.</p>
+        <p class="mt-2 font-mono text-xs">Powered by Cognitive Edge Engine</p>
+    </footer>
+
 </body>
 </html>
