@@ -56,8 +56,7 @@
             </p>
             
             <div class="flex flex-col items-center gap-6">
-                <button id="main-cta" onclick="document.getElementById('download-area').scrollIntoView({behavior: 'smooth'})" 
-                    class="bg-neonMint text-white font-extrabold py-5 px-12 rounded-2xl text-2xl hover:scale-105 transition-all shadow-[0_20px_50px_rgba(0,212,182,0.3)] uppercase">
+                <button id="main-cta" class="bg-neonMint text-white font-extrabold py-5 px-12 rounded-2xl text-2xl hover:scale-105 transition-all shadow-[0_20px_50px_rgba(0,212,182,0.3)] uppercase">
                     Try it now
                 </button>
             </div>
@@ -97,20 +96,7 @@
         </div>
     </section>
 
-    <section id="download-area" class="py-24 bg-slate-50 px-6 text-center">
-        <div class="max-w-xl mx-auto">
-            <h2 id="final-t" class="text-3xl font-extrabold mb-6">Ready for your new identity?</h2>
-            <p id="final-p" class="text-slateGrey mb-10 text-lg">We are preparing your download link. Enter your email to receive priority access.</p>
-            <form action="#" method="POST" class="flex flex-col gap-4">
-                <input type="email" name="email" id="email-placeholder" placeholder="Your email" class="p-4 rounded-xl border border-slate-200 focus:outline-neuralIndigo text-center" required>
-                <button id="submit-btn" type="submit" class="bg-obsidian text-white font-bold py-4 rounded-xl hover:bg-neuralIndigo transition-all uppercase tracking-widest">
-                    Get Access
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <footer class="py-10 text-center text-slateGrey text-[10px] tracking-widest uppercase border-t border-slate-100">
+    <footer class="py-16 text-center text-slateGrey text-[10px] tracking-widest uppercase bg-white">
         <span id="footer-text">&copy; 2026 Kova • Created by Disciplina</span>
     </footer>
 
@@ -131,10 +117,6 @@
                 tag1: "Identity Points",
                 tag2: "Fair Deals",
                 tag3: "Two Roads",
-                finalT: "Ready for your new identity?",
-                finalP: "We are preparing your download link. Enter your email to receive priority access.",
-                submitBtn: "Get Access",
-                emailPh: "Your email",
                 footer: "© 2026 Kova • Created by Disciplina"
             },
             es: {
@@ -152,10 +134,6 @@
                 tag1: "Puntos de Identidad",
                 tag2: "Tratos Justos",
                 tag3: "Dos Caminos",
-                finalT: "¿Listo para tu nueva identidad?",
-                finalP: "Estamos preparando tu enlace de descarga. Introduce tu email para recibir acceso prioritario.",
-                submitBtn: "Obtener Acceso",
-                emailPh: "Tu email",
                 footer: "© 2026 Kova • Creado por Disciplina"
             }
         };
@@ -175,10 +153,6 @@
             document.getElementById('tag-1').innerText = translations[lang].tag1;
             document.getElementById('tag-2').innerText = translations[lang].tag2;
             document.getElementById('tag-3').innerText = translations[lang].tag3;
-            document.getElementById('final-t').innerText = translations[lang].finalT;
-            document.getElementById('final-p').innerText = translations[lang].finalP;
-            document.getElementById('submit-btn').innerText = translations[lang].submitBtn;
-            document.getElementById('email-placeholder').placeholder = translations[lang].emailPh;
             document.getElementById('footer-text').innerText = translations[lang].footer;
 
             if(lang === 'es') {
