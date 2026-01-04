@@ -29,141 +29,141 @@
         h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
         body { font-family: 'Inter', sans-serif; color: #111827; scroll-behavior: smooth; }
         .bg-kova-gradient { background: linear-gradient(135deg, #4F46E5 0%, #8B5CF6 100%); }
-        .glass { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
     </style>
 </head>
 <body class="bg-white text-obsidian">
+
+    <div class="fixed top-6 right-6 z-50">
+        <button onclick="toggleLanguage()" id="lang-btn" class="bg-white/20 backdrop-blur-md border border-white/30 text-white px-4 py-2 rounded-full font-bold text-sm hover:bg-white hover:text-neuralIndigo transition-all shadow-lg">
+            EN / ES
+        </button>
+    </div>
 
     <header class="relative bg-kova-gradient py-20 lg:py-32 px-6 text-white overflow-hidden text-center">
         <div class="max-w-5xl mx-auto relative z-10">
             <div class="inline-block px-4 py-1 rounded-full border border-neonMint/50 bg-neonMint/10 text-neonMint text-xs font-bold tracking-widest uppercase mb-6">
                 v1.0.2 Stable Release
             </div>
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight">
+            <h1 id="hero-title" class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight">
                 La disciplina se construye, <br>
                 <span class="text-neonMint italic">no se tiene.</span>
             </h1>
-            <p class="text-xl md:text-2xl mb-12 text-blue-100 max-w-3xl mx-auto font-medium opacity-90">
-                Kova es el motor de alto rendimiento para tu vida. IA conversacional integrada con sistemas de identidad para que la constancia sea inevitable.
+            <p id="hero-sub" class="text-xl md:text-2xl mb-12 text-blue-100 max-w-3xl mx-auto font-medium opacity-90">
+                Kova es la IA que entrena tu identidad para que la constancia sea inevitable. Basada en ciencia conductual.
             </p>
             
             <div class="flex flex-col items-center gap-6">
-                <button onclick="document.getElementById('download-area').scrollIntoView({behavior: 'smooth'})" 
-                    class="group relative bg-neonMint text-obsidian font-extrabold py-5 px-12 rounded-2xl text-2xl hover:scale-105 transition-all shadow-[0_20px_50px_rgba(0,212,182,0.3)]">
-                    DESCARGAR KOVA
-                    <span class="absolute -top-3 -right-3 bg-obsidian text-neonMint text-[10px] py-1 px-2 rounded-lg border border-neonMint font-mono">MAC / ANDROID</span>
+                <button id="main-cta" onclick="document.getElementById('download-area').scrollIntoView({behavior: 'smooth'})" 
+                    class="bg-neonMint text-obsidian font-extrabold py-5 px-12 rounded-2xl text-2xl hover:scale-105 transition-all shadow-[0_20px_50px_rgba(0,212,182,0.3)] uppercase">
+                    Descargar Kova
                 </button>
                 <p class="text-sm text-blue-200 font-mono opacity-70">Build: Ruby 3.3.0 | SQLite3 | OpenAI Optimized</p>
             </div>
         </div>
-        
         <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
             <svg width="100%" height="100%"><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/></pattern><rect width="100%" height="100%" fill="url(#grid)" /></svg>
         </div>
     </header>
 
-    <section class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-neuralIndigo">Sistemas de Ingeniería Conductual</h2>
-            <p class="text-slateGrey mt-4">No es un tracker más. Es una arquitectura completa de cambio.</p>
+    <section class="py-24 px-6 max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+        <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100">
+            <div class="text-3xl mb-4">🪞</div>
+            <h3 id="feat-1-t" class="text-xl font-bold mb-3 text-neuralIndigo">The Mirror</h3>
+            <p id="feat-1-p" class="text-slateGrey leading-relaxed text-sm">No sumes días, acumula evidencia. Cada hábito completado suma <strong>Identity Points</strong> que validan quién eres.</p>
         </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all">
-                <div class="w-12 h-12 bg-neuralIndigo/10 rounded-xl flex items-center justify-center text-2xl mb-6 text-neuralIndigo">🪞</div>
-                <h3 class="text-xl font-bold mb-3">The Mirror (Identity)</h3>
-                <p class="text-slateGrey leading-relaxed">Cada hábito completado suma <strong>Identity Points</strong>. No sumas días, acumulas evidencia de quién eres.</p>
-            </div>
-
-            <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all">
-                <div class="w-12 h-12 bg-electricPurple/10 rounded-xl flex items-center justify-center text-2xl mb-6 text-electricPurple">🧠</div>
-                <h3 class="text-xl font-bold mb-3">Pattern Radar</h3>
-                <p class="text-slateGrey leading-relaxed">Nuestra IA identifica tus <strong>Triggers</strong> y situaciones de riesgo antes de que ocurran, activando planes de acción proactivos.</p>
-            </div>
-
-            <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all">
-                <div class="w-12 h-12 bg-neonMint/10 rounded-xl flex items-center justify-center text-2xl mb-6 text-neonMint">🛤️</div>
-                <h3 class="text-xl font-bold mb-3">Two Roads</h3>
-                <p class="text-slateGrey leading-relaxed">Visualización dinámica de tu **Future Vision**. El impacto de tus decisiones de hoy proyectado en tu mañana.</p>
-            </div>
-
-            <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all">
-                <div class="w-12 h-12 bg-yellow-500/10 rounded-xl flex items-center justify-center text-2xl mb-6">🏆</div>
-                <h3 class="text-xl font-bold mb-3">Trophy Room</h3>
-                <p class="text-slateGrey leading-relaxed">Sistema de gamificación avanzado con trofeos de racha, hitos de recuperación y logros por arquetipo.</p>
-            </div>
-
-            <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all">
-                <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-2xl mb-6">🤝</div>
-                <h3 class="text-xl font-bold mb-3">Fair Deals</h3>
-                <p class="text-slateGrey leading-relaxed">Negociaciones inteligentes contigo mismo para situaciones especiales. Flexibilidad sin pérdida de integridad.</p>
-            </div>
-
-            <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all">
-                <div class="w-12 h-12 bg-red-500/10 rounded-xl flex items-center justify-center text-2xl mb-6">🛡️</div>
-                <h3 class="text-xl font-bold mb-3">Cognitive Arquetypes</h3>
-                <p class="text-slateGrey leading-relaxed">Warrior, Scientist, Companion o Rebel. La IA adapta su tono y desafíos según tu personalidad conductual.</p>
-            </div>
+        <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100">
+            <div class="text-3xl mb-4">⚡</div>
+            <h3 id="feat-2-t" class="text-xl font-bold mb-3 text-neuralIndigo">Fast Mode</h3>
+            <p id="feat-2-p" class="text-slateGrey leading-relaxed text-sm">¿Día difícil? Activa la micro-acción de 30 segundos. Mantén tu racha intacta incluso en el caos.</p>
+        </div>
+        <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100">
+            <div class="text-3xl mb-4">🧠</div>
+            <h3 id="feat-3-t" class="text-xl font-bold mb-3 text-neuralIndigo">Pattern Radar</h3>
+            <p id="feat-3-p" class="text-slateGrey leading-relaxed text-sm">IA que detecta tus patrones de abandono y activa planes de acción antes de que ocurra el autosabotaje.</p>
         </div>
     </section>
 
-    <section class="bg-obsidian py-24 px-6 text-white overflow-hidden">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
-            <div class="md:w-1/2">
-                <h2 class="text-3xl font-bold mb-6 text-neonMint">Construido con Robustez</h2>
-                <p class="text-slate-400 mb-8 leading-relaxed">
-                    Kova utiliza un stack tecnológico de última generación para garantizar la privacidad y la velocidad. Integración nativa con **OpenAI API** para coaching en tiempo real y arquitectura **Ruby on Rails 8.1**.
-                </p>
-                <div class="grid grid-cols-2 gap-4 font-mono text-sm">
-                    <div class="flex items-center gap-2 text-slate-300">
-                        <span class="text-neonMint">✔</span> Rails 8.1 / Hotwire
-                    </div>
-                    <div class="flex items-center gap-2 text-slate-300">
-                        <span class="text-neonMint">✔</span> Solid Queue / Cache
-                    </div>
-                    <div class="flex items-center gap-2 text-slate-300">
-                        <span class="text-neonMint">✔</span> SQLite3 + Kamal
-                    </div>
-                    <div class="flex items-center gap-2 text-slate-300">
-                        <span class="text-neonMint">✔</span> AI Coaching (GPT-4o)
-                    </div>
-                </div>
-            </div>
-            <div class="md:w-1/2 bg-white/5 p-8 rounded-2xl border border-white/10 font-mono text-xs text-blue-300 overflow-x-auto">
-                <p class="text-slate-500 mb-2">// Kova System Structure</p>
-                <p>app/models/user.rb <span class="text-neonMint"># Autenticación</span></p>
-                <p>app/models/habit.rb <span class="text-neonMint"># Streaks & Identity</span></p>
-                <p>app/models/future_vision.rb <span class="text-neonMint"># Two Roads</span></p>
-                <p>app/models/llm_interaction.rb <span class="text-neonMint"># AI Engine</span></p>
-                <p class="mt-4 text-slate-500">bin/kamal deploy ... <span class="text-white">Success!</span></p>
+    <section class="bg-obsidian py-20 px-6 text-white text-center">
+        <div class="max-w-3xl mx-auto">
+            <h2 id="tech-t" class="text-2xl font-bold mb-6 text-neonMint uppercase tracking-widest">Ingeniería Conductual</h2>
+            <p id="tech-p" class="text-slate-400 leading-relaxed font-light mb-8">
+                Construido sobre un stack de alto rendimiento (Rails 8.1 + OpenAI). Diseñado para ser la herramienta definitiva de aquellos que buscan su ventaja cognitiva.
+            </p>
+            <div class="flex justify-center gap-6 text-xs font-mono text-slate-500">
+                <span>IDENTITY POINTS</span> <span>•</span> <span>FAIR DEALS</span> <span>•</span> <span>TWO ROADS</span>
             </div>
         </div>
     </section>
 
     <section id="download-area" class="py-24 bg-slate-50 px-6 text-center">
         <div class="max-w-xl mx-auto">
-            <h2 class="text-3xl md:text-5xl font-extrabold mb-6">¿Preparado para tu <span class="text-neuralIndigo italic">Daily Edge</span>?</h2>
-            <p class="text-slateGrey mb-10 text-lg leading-relaxed">
-                Estamos procesando la versión estable para tu región. Déjanos tu email para recibir el enlace directo de descarga y un **mes gratis de Kova Premium**.
-            </p>
-            
-            <div class="bg-white p-2 rounded-2xl shadow-2xl border border-slate-200">
-                <form action="AQUÍ_TU_URL_DE_FORMSPREE" method="POST" class="flex flex-col md:flex-row gap-2">
-                    <input type="email" name="email" placeholder="Tu email principal" 
-                        class="flex-1 p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-neuralIndigo text-lg bg-transparent" required>
-                    <button type="submit" 
-                        class="bg-obsidian text-white font-bold py-4 px-8 rounded-xl hover:bg-neuralIndigo transition-all uppercase tracking-wider">
-                        Acceso Directo
-                    </button>
-                </form>
-            </div>
-            <p class="text-[10px] text-slateGrey mt-6 uppercase tracking-[0.3em]">No Spam. Solo Disciplina. Español & English.</p>
+            <h2 id="final-t" class="text-3xl font-extrabold mb-6">¿Listo para tu nueva identidad?</h2>
+            <p id="final-p" class="text-slateGrey mb-10 text-lg">Estamos preparando tu enlace de descarga. Introduce tu email para recibir acceso prioritario.</p>
+            <form action="#" method="POST" class="flex flex-col gap-4">
+                <input type="email" name="email" placeholder="Tu email" class="p-4 rounded-xl border border-slate-200 focus:outline-neuralIndigo" required>
+                <button id="submit-btn" type="submit" class="bg-obsidian text-white font-bold py-4 rounded-xl hover:bg-neuralIndigo transition-all uppercase tracking-widest">
+                    Obtener Acceso
+                </button>
+            </form>
         </div>
     </section>
 
-    <footer class="py-12 text-center text-slate-400 text-[10px] tracking-widest uppercase border-t border-slate-100">
-        &copy; 2026 Kova Cognitive Edge • Creado con Sistema de Agentes Disciplina
-    </footer>
+    <script>
+        let currentLang = 'es';
+        const translations = {
+            es: {
+                heroTitle: "La disciplina se construye, <br><span class='text-neonMint italic'>no se tiene.</span>",
+                heroSub: "Kova es la IA que entrena tu identidad para que la constancia sea inevitable. Basada en ciencia conductual.",
+                mainCta: "Descargar Kova",
+                feat1T: "The Mirror",
+                feat1P: "No sumes días, acumula evidencia. Cada hábito completado suma <strong>Identity Points</strong> que validan quién eres.",
+                feat2T: "Fast Mode",
+                feat2P: "¿Día difícil? Activa la micro-acción de 30 segundos. Mantén tu racha intacta incluso en el caos.",
+                feat3T: "Pattern Radar",
+                feat3P: "IA que detecta tus patrones de abandono y activa planes de acción antes de que ocurra el autosabotaje.",
+                techT: "Ingeniería Conductual",
+                techP: "Construido sobre un stack de alto rendimiento (Rails 8.1 + OpenAI). Diseñado para ser la herramienta definitiva de aquellos que buscan su ventaja cognitiva.",
+                finalT: "¿Listo para tu nueva identidad?",
+                finalP: "Estamos preparando tu enlace de descarga. Introduce tu email para recibir acceso prioritario.",
+                submitBtn: "Obtener Acceso"
+            },
+            en: {
+                heroTitle: "Discipline is built, <br><span class='text-neonMint italic'>not owned.</span>",
+                heroSub: "Kova is the AI that trains your identity to make consistency inevitable. Based on behavioral science.",
+                mainCta: "Download Kova",
+                feat1T: "The Mirror",
+                feat1P: "Don't just track days, track evidence. Every habit completed adds <strong>Identity Points</strong> that validate who you are.",
+                feat2T: "Fast Mode",
+                feat2P: "Tough day? Activate a 30-second micro-action. Keep your streak alive even in total chaos.",
+                feat3T: "Pattern Radar",
+                feat3P: "AI that detects abandonment patterns and triggers action plans before self-sabotage happens.",
+                techT: "Behavioral Engineering",
+                techP: "Built on a high-performance stack (Rails 8.1 + OpenAI). Designed to be the ultimate tool for those seeking their cognitive edge.",
+                finalT: "Ready for your new identity?",
+                finalP: "We are preparing your download link. Enter your email to receive priority access.",
+                submitBtn: "Get Access"
+            }
+        };
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            document.getElementById('hero-title').innerHTML = translations[currentLang].heroTitle;
+            document.getElementById('hero-sub').innerText = translations[currentLang].heroSub;
+            document.getElementById('main-cta').innerText = translations[currentLang].mainCta;
+            document.getElementById('feat-1-t').innerText = translations[currentLang].feat1T;
+            document.getElementById('feat-1-p').innerHTML = translations[currentLang].feat1P;
+            document.getElementById('feat-2-t').innerText = translations[currentLang].feat2T;
+            document.getElementById('feat-2-p').innerText = translations[currentLang].feat2P;
+            document.getElementById('feat-3-t').innerText = translations[currentLang].feat3T;
+            document.getElementById('feat-3-p').innerText = translations[currentLang].feat3P;
+            document.getElementById('tech-t').innerText = translations[currentLang].techT;
+            document.getElementById('tech-p').innerText = translations[currentLang].techP;
+            document.getElementById('final-t').innerText = translations[currentLang].finalT;
+            document.getElementById('final-p').innerText = translations[currentLang].finalP;
+            document.getElementById('submit-btn').innerText = translations[currentLang].submitBtn;
+            document.getElementById('lang-btn').innerText = currentLang === 'es' ? 'EN / ES' : 'ES / EN';
+        }
+    </script>
 
 </body>
 </html>
