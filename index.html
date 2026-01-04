@@ -57,8 +57,8 @@
             
             <div class="flex flex-col items-center gap-6">
                 <button id="main-cta" onclick="document.getElementById('download-area').scrollIntoView({behavior: 'smooth'})" 
-                    class="bg-neonMint text-obsidian font-extrabold py-5 px-12 rounded-2xl text-2xl hover:scale-105 transition-all shadow-[0_20px_50px_rgba(0,212,182,0.3)] uppercase">
-                    Download Kova
+                    class="bg-neonMint text-white font-extrabold py-5 px-12 rounded-2xl text-2xl hover:scale-105 transition-all shadow-[0_20px_50px_rgba(0,212,182,0.3)] uppercase">
+                    Try it now
                 </button>
             </div>
         </div>
@@ -119,7 +119,7 @@
             en: {
                 heroTitle: "Discipline is built, <br><span class='text-neonMint italic'>not owned.</span>",
                 heroSub: "Kova is the AI that trains your identity to make consistency inevitable. Based on behavioral science.",
-                mainCta: "Download Kova",
+                mainCta: "Try it now",
                 feat1T: "The Mirror",
                 feat1P: "Don't just track days, track evidence. Every habit adds <strong>Identity Points</strong> that validate who you are.",
                 feat2T: "Fast Mode",
@@ -140,7 +140,7 @@
             es: {
                 heroTitle: "La disciplina se construye, <br><span class='text-neonMint italic'>no se tiene.</span>",
                 heroSub: "Kova es la IA que entrena tu identidad para que la constancia sea inevitable. Basada en ciencia conductual.",
-                mainCta: "Descargar Kova",
+                mainCta: "Pruébalo ahora",
                 feat1T: "El Espejo",
                 feat1P: "No sumes días, acumula evidencia. Cada hábito suma <strong>Puntos de Identidad</strong> que validan quién eres.",
                 feat2T: "Modo Rápido",
@@ -161,7 +161,6 @@
         };
 
         function setLanguage(lang) {
-            // Actualizar textos
             document.getElementById('hero-title').innerHTML = translations[lang].heroTitle;
             document.getElementById('hero-sub').innerText = translations[lang].heroSub;
             document.getElementById('main-cta').innerText = translations[lang].mainCta;
@@ -182,7 +181,6 @@
             document.getElementById('email-placeholder').placeholder = translations[lang].emailPh;
             document.getElementById('footer-text').innerText = translations[lang].footer;
 
-            // Gestión de visibilidad de botones
             if(lang === 'es') {
                 document.getElementById('btn-to-es').classList.add('hidden');
                 document.getElementById('btn-to-en').classList.remove('hidden');
