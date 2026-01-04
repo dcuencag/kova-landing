@@ -29,16 +29,19 @@
         h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
         body { font-family: 'Inter', sans-serif; color: #111827; scroll-behavior: smooth; }
         .bg-kova-gradient { background: linear-gradient(135deg, #4F46E5 0%, #8B5CF6 100%); }
+        .hidden { display: none; }
     </style>
 </head>
 <body class="bg-white text-obsidian">
 
-    <div class="fixed top-6 right-6 z-50 flex gap-2">
-        <button onclick="setLanguage('en')" id="btn-en" class="bg-white/20 backdrop-blur-md border border-white/40 p-2 rounded-full hover:scale-110 transition-all shadow-lg grayscale-0" title="English">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg" class="w-6 h-6 rounded-full object-cover">
-        </button>
-        <button onclick="setLanguage('es')" id="btn-es" class="bg-white/10 backdrop-blur-md border border-white/20 p-2 rounded-full hover:scale-110 transition-all shadow-lg grayscale opacity-70" title="Español">
+    <div class="fixed top-6 right-6 z-50">
+        <button onclick="setLanguage('es')" id="btn-to-es" class="bg-white/20 backdrop-blur-md border border-white/40 p-2 rounded-full hover:scale-110 transition-all shadow-lg flex items-center gap-2 group" title="Cambiar a Español">
             <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" class="w-6 h-6 rounded-full object-cover">
+            <span class="text-white text-xs font-bold pr-2 hidden group-hover:block">ES</span>
+        </button>
+        <button onclick="setLanguage('en')" id="btn-to-en" class="bg-white/20 backdrop-blur-md border border-white/40 p-2 rounded-full hover:scale-110 transition-all shadow-lg hidden items-center gap-2 group" title="Switch to English">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg" class="w-6 h-6 rounded-full object-cover">
+            <span class="text-white text-xs font-bold pr-2 hidden group-hover:block">EN</span>
         </button>
     </div>
 
@@ -112,7 +115,6 @@
     </footer>
 
     <script>
-        let currentLang = 'en';
         const translations = {
             en: {
                 heroTitle: "Discipline is built, <br><span class='text-neonMint italic'>not owned.</span>",
@@ -159,8 +161,6 @@
         };
 
         function setLanguage(lang) {
-            currentLang = lang;
-            
             // Actualizar textos
             document.getElementById('hero-title').innerHTML = translations[lang].heroTitle;
             document.getElementById('hero-sub').innerText = translations[lang].heroSub;
@@ -182,13 +182,15 @@
             document.getElementById('email-placeholder').placeholder = translations[lang].emailPh;
             document.getElementById('footer-text').innerText = translations[lang].footer;
 
-            // Estilos de botones de bandera
+            // Gestión de visibilidad de botones
             if(lang === 'es') {
-                document.getElementById('btn-es').classList.remove('grayscale', 'opacity-70');
-                document.getElementById('btn-en').classList.add('grayscale', 'opacity-70');
+                document.getElementById('btn-to-es').classList.add('hidden');
+                document.getElementById('btn-to-en').classList.remove('hidden');
+                document.getElementById('btn-to-en').classList.add('flex');
             } else {
-                document.getElementById('btn-en').classList.remove('grayscale', 'opacity-70');
-                document.getElementById('btn-es').classList.add('grayscale', 'opacity-70');
+                document.getElementById('btn-to-en').classList.add('hidden');
+                document.getElementById('btn-to-es').classList.remove('hidden');
+                document.getElementById('btn-to-es').classList.add('flex');
             }
         }
     </script>
