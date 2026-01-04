@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kova | Construye tu Disciplina</title>
+    <title>Kova | Cognitive Edge Discipline</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -33,26 +33,25 @@
 </head>
 <body class="bg-white">
 
-    <header class="relative bg-kova-gradient py-20 px-6 text-white overflow-hidden">
-        <div class="max-w-4xl mx-auto text-center relative z-10">
+    <header class="relative bg-kova-gradient py-24 px-6 text-white overflow-hidden text-center">
+        <div class="max-w-4xl mx-auto relative z-10">
             <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight leading-tight">
                 La disciplina se construye, <br>
                 <span class="text-neonMint">no se tiene.</span>
             </h1>
-            <p class="text-xl md:text-2xl mb-10 text-blue-100 max-w-2xl mx-auto font-medium">
-                Deja de castigarte por fallar. Kova es la IA que entrena tu identidad para que la constancia sea inevitable.
+            <p class="text-xl md:text-2xl mb-12 text-blue-100 max-w-2xl mx-auto font-medium">
+                Kova es la IA que entrena tu identidad para que la constancia sea inevitable. Disponible para Android y iOS.
             </p>
             
-            <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 inline-block w-full max-w-md shadow-2xl">
-                <form action="AQUÍ_TU_URL_DE_FORMSPREE" method="POST" class="flex flex-col gap-4">
-                    <input type="email" name="email" placeholder="Tu email" 
-                        class="bg-white text-obsidian p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-neonMint text-lg" required>
-                    <button type="submit" 
-                        class="bg-neonMint text-obsidian font-bold py-4 rounded-xl text-xl hover:scale-105 transition-all shadow-[0_0_20px_rgba(0,212,182,0.4)]">
-                        EMPEZAR AHORA
-                    </button>
-                </form>
-                <p class="text-[10px] text-blue-200 mt-4 uppercase tracking-[0.2em] font-bold">Únete al acceso anticipado gratuito</p>
+            <div class="inline-block w-full max-w-md">
+                <button onclick="document.getElementById('email-capture').scrollIntoView({behavior: 'smooth'})" 
+                    class="w-full bg-neonMint text-obsidian font-bold py-5 rounded-2xl text-xl hover:scale-105 transition-all shadow-[0_0_30px_rgba(0,212,182,0.5)] flex items-center justify-center gap-3">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5,12A5.5,5.5 0 0,1 12,17.5A5.5,5.5 0 0,1 6.5,12A5.5,5.5 0 0,1 12,6.5A5.5,5.5 0 0,1 17.5,12M14.47,2L13.23,4H10.77L9.53,2H14.47M15.89,2H20V6.11L18,7.33V16.67L20,17.89V22H15.89L14.67,20H9.33L8.11,22H4V17.89L6,16.67V7.33L4,6.11V2H8.11L9.33,4H14.67L15.89,2Z" /></svg>
+                    DESCARGAR KOVA
+                </button>
+                <p class="text-xs text-blue-200 mt-4 uppercase tracking-[0.2em] font-bold opacity-80">
+                    Versión 1.0.2 • 45MB • Gratuito
+                </p>
             </div>
         </div>
         
@@ -62,30 +61,31 @@
     </header>
 
     <section class="py-20 px-6 max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-            <div class="text-2xl mb-3">🪞</div>
-            <h3 class="text-neuralIndigo font-bold text-lg mb-2">Identidad, no rayas</h3>
-            <p class="text-slateGrey text-sm">Cada acción suma puntos de identidad. Visualiza quién estás llegando a ser, no solo lo que haces.</p>
+        <div class="p-8 bg-slate-50 rounded-3xl border border-slate-100 hover:border-neuralIndigo transition-colors">
+            <div class="text-3xl mb-4">🪞</div>
+            <h3 class="text-neuralIndigo font-bold text-lg mb-2">The Mirror</h3>
+            <p class="text-slateGrey text-sm">Visualiza quién eres hoy. No sumas días, acumulas <strong>Identity Points</strong> que validan tu nueva disciplina.</p>
         </div>
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-            <div class="text-2xl mb-3">⚡</div>
-            <h3 class="text-neuralIndigo font-bold text-lg mb-2">Modo 30 Segundos</h3>
-            <p class="text-slateGrey text-sm">¿Sin tiempo? Activa el Fast Mode. Mantén la cadena intacta incluso en tus peores días.</p>
+        <div class="p-8 bg-slate-50 rounded-3xl border border-slate-100 hover:border-electricPurple transition-colors">
+            <div class="text-3xl mb-4">⚡</div>
+            <h3 class="text-neuralIndigo font-bold text-lg mb-2">Fast Mode</h3>
+            <p class="text-slateGrey text-sm">Mantén tu racha incluso en días de caos con acciones de 30 segundos. Imposible fallar.</p>
         </div>
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-            <div class="text-2xl mb-3">🧠</div>
-            <h3 class="text-neuralIndigo font-bold text-lg mb-2">IA Proactiva</h3>
-            <p class="text-slateGrey text-sm">Kova detecta cuándo vas a abandonar antes de que ocurra y ajusta el plan por ti.</p>
+        <div class="p-8 bg-slate-50 rounded-3xl border border-slate-100 hover:border-neonMint transition-colors">
+            <div class="text-3xl mb-4">🧠</div>
+            <h3 class="text-neuralIndigo font-bold text-lg mb-2">Pattern Radar</h3>
+            <p class="text-slateGrey text-sm">IA que detecta tus puntos de abandono y te protege antes de que el autosabotaje ocurra.</p>
         </div>
     </section>
 
-    <section class="bg-obsidian py-16 px-6 text-white text-center">
-        <div class="max-w-2xl mx-auto">
-            <h2 class="text-2xl font-bold mb-6">Creado por necesidad real</h2>
-            <p class="text-slate-400 leading-relaxed italic font-light">
-                "Nos cansamos de ver a personas brillantes estancadas por la culpa de 'no ser disciplinadas'. Creamos Kova porque las herramientas actuales asumen que ya tienes voluntad, cuando eso es precisamente lo que necesitas construir."
-            </p>
-            <div class="h-1 w-12 bg-neonMint mx-auto mt-8"></div>
+    <section id="email-capture" class="py-20 bg-slate-50 border-t border-slate-200 px-6">
+        <div class="max-w-md mx-auto text-center">
+            <h2 class="text-2xl font-bold mb-4">Estamos preparando tu enlace</h2>
+            <p class="text-slateGrey mb-8">Dinos dónde enviarte el acceso directo para tu dispositivo (Android/iOS) en cuanto se complete la descarga.</p>
+            <form action="AQUÍ_TU_URL_DE_FORMSPREE" method="POST" class="flex flex-col gap-4">
+                <input type="email" name="email" placeholder="Tu mejor email" class="p-4 rounded-xl border focus:outline-neuralIndigo" required>
+                <button type="submit" class="bg-obsidian text-white font-bold py-4 rounded-xl hover:bg-neuralIndigo transition-all">AVÍSAME AL TERMINAR</button>
+            </form>
         </div>
     </section>
 
