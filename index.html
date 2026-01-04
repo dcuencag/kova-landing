@@ -30,12 +30,11 @@
         h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
         body { font-family: 'Inter', sans-serif; color: #111827; scroll-behavior: smooth; background-color: #FFFFFF; }
         
-        /* Gradiente actualizado con los nuevos colores */
         .bg-kova-gradient { 
             background: linear-gradient(135deg, #4F46E5 0%, #855CF6 100%); 
         }
 
-        /* Animación suave para el cambio de texto */
+        /* Animación sutil de entrada al cambiar texto */
         .fade-text {
             animation: fadeInBlur 0.5s ease-out forwards;
         }
@@ -63,7 +62,7 @@
 
     <header class="relative bg-kova-gradient py-24 lg:py-32 px-6 text-white overflow-hidden text-center">
         <div class="max-w-5xl mx-auto relative z-10">
-            <h1 id="hero-title" class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight transition-all duration-500">
+            <h1 id="hero-title" class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight">
                 Discipline is built, <br>
                 <span class="text-focusMint italic">not owned.</span>
             </h1>
@@ -72,7 +71,7 @@
             </p>
             
             <div class="flex flex-col items-center gap-6">
-                <a href="http://65.21.109.151" id="main-cta" class="bg-focusMint text-cleanWhite font-extrabold py-5 px-12 rounded-2xl text-2xl hover:scale-105 transition-all shadow-[0_20px_50px_rgba(42,183,169,0.3)] uppercase inline-block">
+                <a href="https://kova.tali-o.com" id="main-cta" class="bg-focusMint text-cleanWhite font-extrabold py-5 px-12 rounded-2xl text-2xl hover:scale-105 transition-all shadow-[0_20px_50px_rgba(42,183,169,0.3)] uppercase inline-block">
                     Try it now
                 </a>
             </div>
@@ -90,8 +89,8 @@
                     document.write(`
                         <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-neuralIndigo/20 transition-all text-center group">
                             <div class="text-3xl mb-4 transform group-hover:scale-110 transition-transform">${icons[i-1]}</div>
-                            <h3 id="feat-${i}-t" class="text-xl font-bold mb-3 text-neuralIndigo transition-all"></h3>
-                            <p id="feat-${i}-p" class="text-slateGrey leading-relaxed text-sm transition-all"></p>
+                            <h3 id="feat-${i}-t" class="text-xl font-bold mb-3 text-neuralIndigo"></h3>
+                            <p id="feat-${i}-p" class="text-slateGrey leading-relaxed text-sm"></p>
                         </div>
                     `);
                 }
@@ -168,7 +167,6 @@
                 { id: 'footer-text', type: 'text', key: 'footer' }
             ];
 
-            // Añadir funcionalidades al array de elementos
             for (let i = 1; i <= 9; i++) {
                 elements.push({ id: `feat-${i}-t`, type: 'text', key: `feat${i}T` });
                 elements.push({ id: `feat-${i}-p`, type: 'html', key: `feat${i}P` });
@@ -177,19 +175,14 @@
             elements.forEach(el => {
                 const target = document.getElementById(el.id);
                 if (target) {
-                    // Quitamos clase para reiniciar animación
                     target.classList.remove('fade-text');
-                    void target.offsetWidth; // Trigger reflow
-                    
+                    void target.offsetWidth; 
                     if (el.type === 'html') target.innerHTML = translations[lang][el.key];
                     else target.innerText = translations[lang][el.key];
-                    
-                    // Añadimos clase de animación
                     target.classList.add('fade-text');
                 }
             });
 
-            // Toggle botones de idioma
             if(lang === 'es') {
                 document.getElementById('btn-to-es').classList.add('hidden');
                 document.getElementById('btn-to-en').classList.remove('hidden').classList.add('flex');
@@ -199,7 +192,6 @@
             }
         }
 
-        // Inicializar textos al cargar
         window.onload = () => setLanguage('en');
     </script>
 </body>
