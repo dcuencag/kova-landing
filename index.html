@@ -12,10 +12,11 @@
                 extend: {
                     colors: {
                         neuralIndigo: '#4F46E5',
-                        neonMint: '#00D4B6',
-                        electricPurple: '#8B5CF6',
+                        focusMint: '#2AB7A9',
+                        electricPurple: '#855CF6',
                         obsidian: '#111827',
                         slateGrey: '#6B7280',
+                        cleanWhite: '#FFFFFF',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -27,12 +28,27 @@
     </script>
     <style>
         h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
-        body { font-family: 'Inter', sans-serif; color: #111827; scroll-behavior: smooth; }
-        .bg-kova-gradient { background: linear-gradient(135deg, #4F46E5 0%, #8B5CF6 100%); }
+        body { font-family: 'Inter', sans-serif; color: #111827; scroll-behavior: smooth; background-color: #FFFFFF; }
+        
+        /* Gradiente actualizado con los nuevos colores */
+        .bg-kova-gradient { 
+            background: linear-gradient(135deg, #4F46E5 0%, #855CF6 100%); 
+        }
+
+        /* Animación suave para el cambio de texto */
+        .fade-text {
+            animation: fadeInBlur 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeInBlur {
+            0% { opacity: 0; transform: translateY(4px); filter: blur(2px); }
+            100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+        }
+
         .hidden { display: none; }
     </style>
 </head>
-<body class="bg-white text-obsidian">
+<body class="bg-cleanWhite text-obsidian">
 
     <div class="fixed top-6 right-6 z-50">
         <button onclick="setLanguage('es')" id="btn-to-es" class="bg-white/20 backdrop-blur-md border border-white/40 p-2 rounded-full hover:scale-110 transition-all shadow-lg flex items-center gap-2 group" title="Cambiar a Español">
@@ -47,16 +63,16 @@
 
     <header class="relative bg-kova-gradient py-24 lg:py-32 px-6 text-white overflow-hidden text-center">
         <div class="max-w-5xl mx-auto relative z-10">
-            <h1 id="hero-title" class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight">
+            <h1 id="hero-title" class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight transition-all duration-500">
                 Discipline is built, <br>
-                <span class="text-neonMint italic">not owned.</span>
+                <span class="text-focusMint italic">not owned.</span>
             </h1>
-            <p id="hero-sub" class="text-xl md:text-2xl mb-12 text-blue-100 max-w-3xl mx-auto font-medium opacity-90">
+            <p id="hero-sub" class="text-xl md:text-2xl mb-12 text-blue-50 max-w-3xl mx-auto font-medium opacity-90">
                 Kova is the AI that trains you to make consistency inevitable. Based on behavioral science.
             </p>
             
             <div class="flex flex-col items-center gap-6">
-                <a href="http://65.21.109.151" id="main-cta" class="bg-neonMint text-white font-extrabold py-5 px-12 rounded-2xl text-2xl hover:scale-105 transition-all shadow-[0_20px_50px_rgba(0,212,182,0.3)] uppercase inline-block">
+                <a href="http://65.21.109.151" id="main-cta" class="bg-focusMint text-cleanWhite font-extrabold py-5 px-12 rounded-2xl text-2xl hover:scale-105 transition-all shadow-[0_20px_50px_rgba(42,183,169,0.3)] uppercase inline-block">
                     Try it now
                 </a>
             </div>
@@ -68,74 +84,41 @@
 
     <section class="py-24 px-6 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-neuralIndigo/30 transition-all text-center">
-                <div class="text-3xl mb-4">🪞</div>
-                <h3 id="feat-1-t" class="text-xl font-bold mb-3 text-neuralIndigo">The Mirror</h3>
-                <p id="feat-1-p" class="text-slateGrey leading-relaxed text-sm">Identity Points System.</p>
-            </div>
-            <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-neuralIndigo/30 transition-all text-center">
-                <div class="text-3xl mb-4">⚡</div>
-                <h3 id="feat-2-t" class="text-xl font-bold mb-3 text-neuralIndigo">Fast Mode</h3>
-                <p id="feat-2-p" class="text-slateGrey leading-relaxed text-sm">Dynamic habit scaling.</p>
-            </div>
-            <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-neuralIndigo/30 transition-all text-center">
-                <div class="text-3xl mb-4">🧠</div>
-                <h3 id="feat-3-t" class="text-xl font-bold mb-3 text-neuralIndigo">Pattern Radar</h3>
-                <p id="feat-3-p" class="text-slateGrey leading-relaxed text-sm">Self-sabotage pattern detector.</p>
-            </div>
-            <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-neuralIndigo/30 transition-all text-center">
-                <div class="text-3xl mb-4">🔄</div>
-                <h3 id="feat-4-t" class="text-xl font-bold mb-3 text-neuralIndigo">The Reframe</h3>
-                <p id="feat-4-p" class="text-slateGrey leading-relaxed text-sm">Real-time cognitive reframing.</p>
-            </div>
-            <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-neuralIndigo/30 transition-all text-center">
-                <div class="text-3xl mb-4">🏆</div>
-                <h3 id="feat-5-t" class="text-xl font-bold mb-3 text-neuralIndigo">Trophy Room</h3>
-                <p id="feat-5-p" class="text-slateGrey leading-relaxed text-sm">Bank of past victories.</p>
-            </div>
-            <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-neuralIndigo/30 transition-all text-center">
-                <div class="text-3xl mb-4">🤝</div>
-                <h3 id="feat-6-t" class="text-xl font-bold mb-3 text-neuralIndigo">Fair Deal</h3>
-                <p id="feat-6-p" class="text-slateGrey leading-relaxed text-sm">Internal negotiator.</p>
-            </div>
-            <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-neuralIndigo/30 transition-all text-center">
-                <div class="text-3xl mb-4">🛣️</div>
-                <h3 id="feat-7-t" class="text-xl font-bold mb-3 text-neuralIndigo">Two Roads</h3>
-                <p id="feat-7-p" class="text-slateGrey leading-relaxed text-sm">Future visualizer (Win/Retry).</p>
-            </div>
-            <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-neuralIndigo/30 transition-all text-center">
-                <div class="text-3xl mb-4">🚇</div>
-                <h3 id="feat-8-t" class="text-xl font-bold mb-3 text-neuralIndigo">The Tunnel</h3>
-                <p id="feat-8-p" class="text-slateGrey leading-relaxed text-sm">Dark Zone explainer.</p>
-            </div>
-            <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-neuralIndigo/30 transition-all text-center">
-                <div class="text-3xl mb-4">🎯</div>
-                <h3 id="feat-9-t" class="text-xl font-bold mb-3 text-neuralIndigo">Daily Edge</h3>
-                <p id="feat-9-p" class="text-slateGrey leading-relaxed text-sm">Daily friction micro-challenge.</p>
-            </div>
+            <script>
+                const icons = ['🪞', '⚡', '🧠', '🔄', '🏆', '🤝', '🛣️', '🚇', '🎯'];
+                for(let i=1; i<=9; i++) {
+                    document.write(`
+                        <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-neuralIndigo/20 transition-all text-center group">
+                            <div class="text-3xl mb-4 transform group-hover:scale-110 transition-transform">${icons[i-1]}</div>
+                            <h3 id="feat-${i}-t" class="text-xl font-bold mb-3 text-neuralIndigo transition-all"></h3>
+                            <p id="feat-${i}-p" class="text-slateGrey leading-relaxed text-sm transition-all"></p>
+                        </div>
+                    `);
+                }
+            </script>
         </div>
     </section>
 
-    <section class="bg-obsidian py-20 px-6 text-white text-center">
+    <section class="bg-obsidian py-20 px-6 text-cleanWhite text-center">
         <div class="max-w-3xl mx-auto">
-            <h2 id="tech-t" class="text-2xl font-bold mb-6 text-neonMint uppercase tracking-widest">Behavioral Engineering</h2>
+            <h2 id="tech-t" class="text-2xl font-bold mb-6 text-focusMint uppercase tracking-widest">Behavioral Engineering</h2>
             <p id="tech-p" class="text-slate-400 leading-relaxed font-light mb-8">
                 Designed to be the ultimate tool for those seeking their cognitive edge through systems, not empty motivation.
             </p>
-            <div class="flex flex-wrap justify-center gap-6 text-[10px] font-mono text-slate-500 uppercase tracking-widest">
+            <div class="flex flex-wrap justify-center gap-6 text-[10px] font-mono text-slateGrey uppercase tracking-widest">
                 <span id="tag-1">Identity Points</span> <span>•</span> <span id="tag-2">Fair Deals</span> <span>•</span> <span id="tag-3">Two Roads</span>
             </div>
         </div>
     </section>
 
-    <footer class="py-16 text-center text-slateGrey text-[10px] tracking-widest uppercase bg-white">
+    <footer class="py-16 text-center text-slateGrey text-[10px] tracking-widest uppercase bg-cleanWhite border-t border-slate-50">
         <span id="footer-text">&copy; 2026 Kova • Created by Disciplina</span>
     </footer>
 
     <script>
         const translations = {
             en: {
-                heroTitle: "Discipline is built, <br><span class='text-neonMint italic'>not owned.</span>",
+                heroTitle: "Discipline is built, <br><span class='text-focusMint italic'>not owned.</span>",
                 heroSub: "Kova is the AI that trains you to make consistency inevitable. Based on behavioral science.",
                 mainCta: "Try it now",
                 feat1T: "The Mirror", feat1P: "Identity Points System.",
@@ -153,7 +136,7 @@
                 footer: "© 2026 Kova • Created by Disciplina"
             },
             es: {
-                heroTitle: "La disciplina se construye, <br><span class='text-neonMint italic'>no se tiene.</span>",
+                heroTitle: "La disciplina se construye, <br><span class='text-focusMint italic'>no se tiene.</span>",
                 heroSub: "Kova es la IA que te entrena para que la constancia sea inevitable. Basada en ciencia conductual.",
                 mainCta: "Pruébalo ahora",
                 feat1T: "El Espejo", feat1P: "Sistema de Puntos de Identidad.",
@@ -173,32 +156,51 @@
         };
 
         function setLanguage(lang) {
-            document.getElementById('hero-title').innerHTML = translations[lang].heroTitle;
-            document.getElementById('hero-sub').innerText = translations[lang].heroSub;
-            document.getElementById('main-cta').innerText = translations[lang].mainCta;
-            
+            const elements = [
+                { id: 'hero-title', type: 'html', key: 'heroTitle' },
+                { id: 'hero-sub', type: 'text', key: 'heroSub' },
+                { id: 'main-cta', type: 'text', key: 'mainCta' },
+                { id: 'tech-t', type: 'text', key: 'techT' },
+                { id: 'tech-p', type: 'text', key: 'techP' },
+                { id: 'tag-1', type: 'text', key: 'tag1' },
+                { id: 'tag-2', type: 'text', key: 'tag2' },
+                { id: 'tag-3', type: 'text', key: 'tag3' },
+                { id: 'footer-text', type: 'text', key: 'footer' }
+            ];
+
+            // Añadir funcionalidades al array de elementos
             for (let i = 1; i <= 9; i++) {
-                document.getElementById(`feat-${i}-t`).innerText = translations[lang][`feat${i}T`];
-                document.getElementById(`feat-${i}-p`).innerHTML = translations[lang][`feat${i}P`];
+                elements.push({ id: `feat-${i}-t`, type: 'text', key: `feat${i}T` });
+                elements.push({ id: `feat-${i}-p`, type: 'html', key: `feat${i}P` });
             }
 
-            document.getElementById('tech-t').innerText = translations[lang].techT;
-            document.getElementById('tech-p').innerText = translations[lang].techP;
-            document.getElementById('tag-1').innerText = translations[lang].tag1;
-            document.getElementById('tag-2').innerText = translations[lang].tag2;
-            document.getElementById('tag-3').innerText = translations[lang].tag3;
-            document.getElementById('footer-text').innerText = translations[lang].footer;
+            elements.forEach(el => {
+                const target = document.getElementById(el.id);
+                if (target) {
+                    // Quitamos clase para reiniciar animación
+                    target.classList.remove('fade-text');
+                    void target.offsetWidth; // Trigger reflow
+                    
+                    if (el.type === 'html') target.innerHTML = translations[lang][el.key];
+                    else target.innerText = translations[lang][el.key];
+                    
+                    // Añadimos clase de animación
+                    target.classList.add('fade-text');
+                }
+            });
 
+            // Toggle botones de idioma
             if(lang === 'es') {
                 document.getElementById('btn-to-es').classList.add('hidden');
-                document.getElementById('btn-to-en').classList.remove('hidden');
-                document.getElementById('btn-to-en').classList.add('flex');
+                document.getElementById('btn-to-en').classList.remove('hidden').classList.add('flex');
             } else {
                 document.getElementById('btn-to-en').classList.add('hidden');
-                document.getElementById('btn-to-es').classList.remove('hidden');
-                document.getElementById('btn-to-es').classList.add('flex');
+                document.getElementById('btn-to-es').classList.remove('hidden').classList.add('flex');
             }
         }
+
+        // Inicializar textos al cargar
+        window.onload = () => setLanguage('en');
     </script>
 </body>
 </html>
